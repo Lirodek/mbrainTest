@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<h1>Hello world</h1>
+	<p th:object="${object}">
+		<span th:text="*{id}"></span>
+		<span th:text="*{name}"></span>
+		<span th:text="*{value}"></span>
+	</p>
+</body>
+</html>

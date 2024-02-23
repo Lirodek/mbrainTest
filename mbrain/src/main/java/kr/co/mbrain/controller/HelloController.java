@@ -57,7 +57,20 @@ public class HelloController {
     
     @GetMapping("/")
 	public ModelAndView index() {
-		return new ModelAndView("paramTest");
+		return new ModelAndView("base/layout");
+	}
+
+    @GetMapping("/hi")
+	public ModelAndView index2(ModelAndView mav) {
+        List list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        //mav.addObject("test", "33");
+        mav.addObject("list", list);
+        mav.setViewName("paramTest");
+
+		return mav;
 	}
 
     @GetMapping("/message")

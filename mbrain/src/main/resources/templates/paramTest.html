@@ -4,6 +4,17 @@
 </head>
 <body>
 	<h1>Hello world</h1>
-	<p th:text="'from parameter id=' + ${param.id + ', name=' +param.name}"></p>
+	<p th:text="'from parameter id=' + ${param.id + ', name=' + param.name}"></p>
+	<a th:href="@{${url}(orderId=(${test}))}">Subscribe to our Newsletter</a>
+	<table border="1">
+		<tr th:each="temp : ${list}">
+			<td th:text="${temp}"></td>
+		</tr>
+	</table>
+	<script th:inline="javascript">
+		/* Thymeleaf로부터 test 값을 받아와서 JavaScript 변수에 할당 */
+		var hello = /*[[${test?:'44'}]]*/'';
+
+	</script>
 </body>
 </html>
